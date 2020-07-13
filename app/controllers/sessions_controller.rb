@@ -36,10 +36,16 @@ class SessionsController < ApplicationController
     end
 
     def destroy 
-        reset_session
-        #if this doesn't work something is very wrong 
-        if session[:user_id] == nil
-            redirect_to '/login', notice: "You are logged out"
+        if session[:user_id]
+            reset_session
+            #if this if statement doesn't work something is very wrong 
+            if session[:user_id] == nil
+                flash[:notice] = "You're logged out"
+                redirect_to '/login'
+            end 
+        else 
+            flash[:notice] = "No one is logged in"
+            redirect_to '/login'
         end 
     end
 
