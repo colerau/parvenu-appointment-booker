@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
             @current_user ||= User.find(session[:user_id])
         end 
     end
+
+    def authorize
+        if current_user.nil? 
+            flash[:notice] = "You must be logged in to access this page"
+            redirect_to login_path
+        end
+    end
 end
