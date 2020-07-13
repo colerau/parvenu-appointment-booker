@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :services
+  resources :appointments
+  resources :employees
   resources :users
 
   root to: 'users#new'
