@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_223705) do
+ActiveRecord::Schema.define(version: 2020_07_13_233805) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "employee_id"
     t.integer "user_id"
     t.boolean "user_checked_in?"
     t.time "time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "employee_times", force: :cascade do |t|
+    t.time "time"
+    t.integer "employee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
