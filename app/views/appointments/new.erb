@@ -1,6 +1,6 @@
 <h1> Book a new appointment </h1> 
 
-<%= form_for(@user.appointments.employee.build) do |f| %>
+<%= form_for(@user.appointments.build) do |f| %>
     Choose your stylist: <br> 
     <%= f.collection_select :employee_id, Employee.all, :id, :name %> 
 
