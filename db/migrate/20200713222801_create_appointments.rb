@@ -4,7 +4,7 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
       t.integer :employee_id
       t.integer :user_id
       t.boolean :user_checked_in?
-      t.time :time
+      t.datetime :time
       t.timestamps
     end
   end

@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 2020_07_13_233805) do
     t.integer "employee_id"
     t.integer "user_id"
     t.boolean "user_checked_in?"
-    t.time "time"
+    t.datetime "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "employee_times", force: :cascade do |t|
-    t.time "time"
+    t.datetime "time"
     t.integer "employee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
