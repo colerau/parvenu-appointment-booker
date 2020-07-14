@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   resources :services
-  resources :appointments
   resources :employees
-  resources :users
+  resources :users do 
+    resources :appointments
+  end
 
-  root to: 'users#new'
+  root to: 'welcome#home'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
