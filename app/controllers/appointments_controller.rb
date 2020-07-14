@@ -1,3 +1,5 @@
 class AppointmentsController < ApplicationController
-    binding.pry
+    def new 
+        binding.pry
+    end
 end
