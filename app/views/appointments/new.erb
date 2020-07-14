@@ -4,6 +4,6 @@
     <%= f.hidden_field :user_id %> 
     Choose your stylist: <br> 
     <%= f.collection_select :employee_id, Employee.all, :id, :name %> 
-
-    <%= f.submit "Next" %> 
+    <%= f.datetime_select :time %> 
+    <%= f.submit "Book Appointment" %> 
 <% end %> 
