@@ -1,8 +1,12 @@
 <h1> Book a new appointment </h1> 
 
 <%= form_for(@appointment) do |f| %>
+    <%= f.hidden_field :user_id %> 
     Choose your stylist: <br> 
-    <%= f.collection_select :employee_id, Employee.all, :id, :name %> <br> 
-    <%= f.datetime_select :time %> 
+    <%= f.collection_select :employee_id, Employee.all, :id, :name %> <br>
+    Month and Year: <%= f.month_field :month %> <br> 
+    Day of month: <%= f.number_field :day %> <br> 
+    Hour of day: <%= f.number_field :hour %> <br> 
+    Minute of hour: <%= f.number_field :minute %> <br> 
     <%= f.submit "Book Appointment" %> 
 <% end %> 
