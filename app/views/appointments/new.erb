@@ -1,9 +1,8 @@
 <h1> Book a new appointment </h1> 
 
 <%= form_for(@appointment) do |f| %>
-    <%= f.hidden_field :user_id %> 
     Choose your stylist: <br> 
-    <%= f.collection_select :employee_id, Employee.all, :id, :name %> 
+    <%= f.collection_select :employee_id, Employee.all, :id, :name %> <br> 
     <%= f.datetime_select :time %> 
     <%= f.submit "Book Appointment" %> 
 <% end %> 

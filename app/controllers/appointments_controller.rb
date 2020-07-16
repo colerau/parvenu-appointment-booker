@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
     def new 
-        @appointment = Appointment.new(user_id: params[:user_id])
+        @appointment = Appointment.new
     end
 
     def create 
