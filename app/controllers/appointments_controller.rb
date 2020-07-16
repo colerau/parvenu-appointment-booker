@@ -5,6 +5,7 @@ class AppointmentsController < ApplicationController
 
     def create 
         binding.pry
+        
     end
 
     private 
