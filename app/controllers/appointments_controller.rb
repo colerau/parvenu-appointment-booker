@@ -4,13 +4,13 @@ class AppointmentsController < ApplicationController
     end
 
     def create 
+        @appointment = Appointment.new(appointment_params)
         binding.pry
-        
     end
 
     private 
 
     def appointment_params 
-        params.require(:appointment)
+        params.require(:appointment).permit(:time, :user_id, :employee_id)
     end
 end

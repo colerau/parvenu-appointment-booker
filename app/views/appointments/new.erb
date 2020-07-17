@@ -4,11 +4,13 @@
     <%= f.hidden_field :user_id %> 
     <h3> Choose your stylist </h3>
     <%= f.collection_select :employee_id, Employee.all, :id, :name %> <br> <br> <br> <br> 
+    <!--
     <h3> Choose a time </h3> 
     <ul>
         <li> Hour of day must be an odd number between 9 and 17 </li> 
         <li> Minute of hour must be 00 </li> 
     </ul>
+    -->
     <%= f.datetime_select :time %> <br> <br> <br> <br> <br> 
     <%= f.submit "Book Appointment" %> 
 <% end %> 
