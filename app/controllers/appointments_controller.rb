@@ -28,6 +28,7 @@ class AppointmentsController < ApplicationController
             flash[:notice] = "Appointment Updated Successfully"
             redirect_to appointment_path(@appointment.id)
         else 
+            flash[:notice] = "Something went wrong"
             render :edit
         end
     end
