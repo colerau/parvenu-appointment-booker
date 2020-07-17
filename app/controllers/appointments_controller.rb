@@ -15,13 +15,35 @@ class AppointmentsController < ApplicationController
     end
 
     def show
-        @appointment = Appointment.find_by(id: params[:id])
-        @user = User.find(@appointment.user_id)
+        get_appointment_and_user
+    end
+
+    def edit 
+        get_appointment_and_user
+    end
+
+    def update 
+        @appointment = Appointment.find(params[:id])
+        if @appointment.update(appointment_params)
+            flash[:notice] = "Appointment Updated Successfully"
+            redirect_to appointment_path(@appointment.id)
+        else 
+            render :edit
+        end
+    end
+
+    def destroy 
+
     end
 
     private 
 
     def appointment_params 
         params.require(:appointment).permit(:time, :user_id, :employee_id)
+    end
+
+    def get_appointment_and_user
+        @appointment = Appointment.find_by(id: params[:id])
+        @user = User.find(@appointment.user_id)
     end
 end

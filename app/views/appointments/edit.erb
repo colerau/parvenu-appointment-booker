@@ -1,0 +1,8 @@
+<h1> Update Appointment </h1> 
+
+<%= form_for(@appointment) do |f| %> 
+    Change Time: <%= f.datetime_select :time %> <br> 
+    Change Employee: <%= f.collection_select :employee_id, Employee.all, :id, :name %> <br> 
+    <%= f.submit "Update Appointment" %> 
+<% end %> 
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_16_023021) do
+ActiveRecord::Schema.define(version: 2020_07_14_051143) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "employee_id"
@@ -19,10 +19,6 @@ ActiveRecord::Schema.define(version: 2020_07_16_023021) do
     t.datetime "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "hour"
-    t.integer "minute"
-    t.integer "day"
-    t.integer "year_and_month"
   end
 
   create_table "employee_times", force: :cascade do |t|
