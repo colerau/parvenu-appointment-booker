@@ -9,6 +9,7 @@ class UsersController < ApplicationController
         @user.email.downcase!
 
         if @user.save
+            session[:user_id] = @user.id 
             flash[:notice] = "You're in."
             redirect_to root_path
         else 
