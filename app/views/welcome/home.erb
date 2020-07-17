@@ -8,11 +8,10 @@
         <% @user.appointments.each do |appointment| %> 
             Appointment Employee: <%= appointment.employee.name %> <br> 
             Appointment Time: <%= appointment.time %> <br> 
-            <%= link_to "Edit Appointment", edit_user_appointment_path(@user.id, appointment.id) %> 
-            
+            <%= link_to "Edit Appointment", edit_user_appointment_path(@user.id, appointment.id) %> <br> 
+            <%= button_to "Delete Appointment", appointment, method: :delete %> 
             <br> <br> 
         <% end %> 
-
     <% end %> 
 <% elsif @user == nil %> 
     <%= link_to "Continue with Facebook", '/auth/facebook' %>
