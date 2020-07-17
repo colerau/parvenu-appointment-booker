@@ -2,7 +2,8 @@
     <img src=<%= @user.image %>> <br><br> 
     Name: <%= @user.name %> <br> 
     Email: <%= @user.email %> <br> 
-    <%= link_to "book a new appointment", new_user_appointment_path(@user.id) %> 
+    <%= link_to "book a new appointment", new_user_appointment_path(@user.id) %> <br> 
+    
 <% elsif @user == nil %> 
     <%= link_to "Continue with Facebook", '/auth/facebook' %>
 <% end %> 
