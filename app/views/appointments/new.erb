@@ -22,6 +22,9 @@
         <li> Minute of hour must be 00 </li> 
     </ul>
 
-    <%= f.datetime_select :time %> <br> <br> <br> <br> <br> 
+    <div class="field <%= ' field_with_errors' if @appointment.errors[:time].any? %>">
+    <%= f.datetime_select :time %> 
+    </div>
+    <br> <br> <br> <br> <br> 
     <%= f.submit "Book Appointment" %> 
 <% end %> 
