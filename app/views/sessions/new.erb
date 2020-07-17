@@ -1,9 +1,10 @@
-Log In 
+<h1> Log In </h1> 
 
 <%= form_tag('/login') do %>
     Email:
     <%= text_field_tag :email %> 
     Password: 
     <%= text_field_tag :password %> 
-    <%= submit_tag "Log In" %> 
+    <%= submit_tag "Log In" %> <br> <br> 
+    <%= link_to "Continue with Facebook", '/auth/facebook' %>
 <% end %> 
