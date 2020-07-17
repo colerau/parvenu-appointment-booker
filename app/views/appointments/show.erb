@@ -1,8 +1,8 @@
 Employee: <%= @appointment.employee.name %> <br> 
 
-Time: <%= @appointment.time %> 
+Time: <%= convert_time(@appointment.time) %> <br> 
 
-User's Name: <%= @user.name %> 
+User's Name: <%= @user.name %> <br> 
 
 User's Image: <img src=<%= @user.image %>>
 

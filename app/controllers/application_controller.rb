@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     #writing "helper_method" makes method available to views too (along with controllers)
-    helper_method :current_user
+    helper_method :current_user, :authorize
 
     def current_user
         if session[:user_id]

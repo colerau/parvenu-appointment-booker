@@ -7,7 +7,7 @@
         <h2> Your Appointment(s): </h2>
         <% @user.appointments.each do |appointment| %> 
             Appointment Employee: <%= appointment.employee.name %> <br> 
-            Appointment Time: <%= appointment.time %> <br> 
+            Appointment Time: <%= convert_time(appointment.time) %> <br> 
             <%= link_to "Edit Appointment", edit_user_appointment_path(@user.id, appointment.id) %> <br> 
             <%= button_to "Delete Appointment", appointment, method: :delete %> 
             <br> <br> 
