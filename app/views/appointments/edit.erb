@@ -1,3 +1,14 @@
+<% if @appointment.errors.any? %> 
+    <div id="error_explanation">
+        <h2> There were some errors: </h2> 
+        <ul> 
+            <% @appointment.errors.full_messages.each do |message| %> 
+                <li> <%= message %> </li>  
+            <% end %> 
+        </ul> 
+    </div> 
+<% end %> 
+
 <h1> Update Appointment </h1> 
 
 <%= form_for(@appointment) do |f| %> 
@@ -5,4 +16,3 @@
     Change Employee: <%= f.collection_select :employee_id, Employee.all, :id, :name %> <br> 
     <%= f.submit "Update Appointment" %> 
 <% end %> 
-

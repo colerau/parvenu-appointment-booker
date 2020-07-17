@@ -8,8 +8,7 @@ class AppointmentsController < ApplicationController
         if @appointment.save 
             flash[:notice] = "Appointment successfully booked"
             redirect_to user_appointment_path(@appointment.user_id, @appointment.id)
-        else 
-            flash[:notice] = "Something went wrong"
+        else
             render :new 
         end
     end
@@ -28,7 +27,6 @@ class AppointmentsController < ApplicationController
             flash[:notice] = "Appointment Updated Successfully"
             redirect_to appointment_path(@appointment.id)
         else 
-            flash[:notice] = "Something went wrong"
             render :edit
         end
     end
