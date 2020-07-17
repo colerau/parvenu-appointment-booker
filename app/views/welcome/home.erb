@@ -4,10 +4,10 @@
     Email: <%= @user.email %> <br> <br> 
     <%= link_to "book a new appointment", new_user_appointment_path(@user.id) %> <br> <br> <br> 
     <% if @user.appointments %> 
-        Your Appointment(s): <br> <br>
+        <h2> Your Appointment(s): </h2>
         <% @user.appointments.each do |appointment| %> 
             Appointment Employee: <%= appointment.employee.name %> <br> 
-            Appointment Time: <%= appointment.time %> 
+            Appointment Time: <%= appointment.time %> <br> <br> 
         <% end %> 
     <% end %> 
 <% elsif @user == nil %> 
