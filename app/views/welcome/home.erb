@@ -1,9 +1,15 @@
 <% if @user %> <br> 
     <img src=<%= @user.image %>> <br><br> 
     Name: <%= @user.name %> <br> 
-    Email: <%= @user.email %> <br> 
-    <%= link_to "book a new appointment", new_user_appointment_path(@user.id) %> <br> 
-    
+    Email: <%= @user.email %> <br> <br> 
+    <%= link_to "book a new appointment", new_user_appointment_path(@user.id) %> <br> <br> <br> 
+    <% if @user.appointments %> 
+        Your Appointment(s): <br> <br>
+        <% @user.appointments.each do |appointment| %> 
+            Appointment Employee: <%= appointment.employee.name %> <br> 
+            Appointment Time: <%= appointment.time %> 
+        <% end %> 
+    <% end %> 
 <% elsif @user == nil %> 
     <%= link_to "Continue with Facebook", '/auth/facebook' %>
 <% end %> 
