@@ -19,7 +19,6 @@ class UsersController < ApplicationController
     end
 
     def most_appointments
-        binding.pry
     end
 
     def show 

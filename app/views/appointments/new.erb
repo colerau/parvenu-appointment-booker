@@ -1,15 +1,6 @@
 <% if logged_in? %> 
     <% if is_users_appointment?(@appointment) %> 
-        <% if @appointment.errors.any? %> 
-            <div id="error_explanation">
-                <h2> There were some errors: </h2> 
-                <ul> 
-                    <% @appointment.errors.full_messages.each do |message| %> 
-                        <li> <%= message %> </li>  
-                    <% end %> 
-                </ul> 
-            </div> 
-        <% end %> 
+        <%= render 'errors' %> 
 
         <h1> Book a new appointment </h1> 
 
@@ -18,11 +9,9 @@
             <h3> Choose your stylist </h3>
             <%= f.collection_select :employee_id, Employee.all, :id, :name %> <br> <br> <br> <br> 
 
-            <h3> Choose a time </h3> 
-            <ul>
-                <li> Hour of day must be an odd number between 9 and 17 </li> 
-                <li> Minute of hour must be 00 </li> 
-            </ul>
+            <h3> Choose time </h3> 
+            
+            <%= render 'time' %> 
 
             <div class="field <%= ' field_with_errors' if @appointment.errors[:time].any? %>">
             <%= f.datetime_select :time %> 
