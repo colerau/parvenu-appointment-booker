@@ -18,6 +18,14 @@ class UsersController < ApplicationController
         end
     end
 
+    def most_appointments
+        binding.pry
+    end
+
+    def show 
+        @user = User.most_appointments
+    end
+
     private 
 
     def user_params 
