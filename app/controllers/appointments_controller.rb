@@ -28,8 +28,13 @@ class AppointmentsController < ApplicationController
     def update 
         @appointment = Appointment.find(params[:id])
         if @appointment.update(appointment_params)
-            flash[:notice] = "Appointment Updated Successfully"
-            redirect_to appointment_path(@appointment.id)
+            if logged_in?
+                binding.pry
+                if is_users_appointment?(@appointment)
+                    flash[:notice] = "Appointment Updated Successfully"
+                    redirect_to appointment_path(@appointment.id)
+                end 
+            end 
         else 
             render :edit
         end
@@ -37,9 +42,13 @@ class AppointmentsController < ApplicationController
 
     def destroy 
         @appointment = Appointment.find(params[:id])
-        @appointment.destroy 
-        flash[:notice] = "Appointment Deleted"
-        redirect_to root_path
+        if logged_in?
+            if is_users_appointment?(@appointment)
+                @appointment.destroy 
+                flash[:notice] = "Appointment Deleted"
+                redirect_to root_path
+            end 
+        end 
     end
 
     private 
@@ -50,6 +59,7 @@ class AppointmentsController < ApplicationController
 
     def get_appointment_and_user
         @appointment = Appointment.find_by(id: params[:id])
-        @user = User.find(@appointment.user_id)
+        @user = User.find_by(id: @appointment.user_id)
+        binding.pry
     end
 end
