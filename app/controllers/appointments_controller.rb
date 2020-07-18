@@ -6,8 +6,12 @@ class AppointmentsController < ApplicationController
     def create 
         @appointment = Appointment.new(appointment_params)
         if @appointment.save 
-            flash[:notice] = "Appointment successfully booked"
-            redirect_to user_appointment_path(@appointment.user_id, @appointment.id)
+            if logged_in?
+                if is_users_appointment?(@appointment)
+                    flash[:notice] = "Appointment successfully booked"
+                    redirect_to user_appointment_path(@appointment.user_id, @appointment.id)
+                end 
+            end 
         else
             render :new 
         end
