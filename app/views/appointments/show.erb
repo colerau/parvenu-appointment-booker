@@ -1,8 +1,8 @@
-Employee: <%= @appointment.employee.name %> <br> 
+<br> 
+<div class="text">
+<i>Stylist:</i> <%= @appointment.employee.name %> <br> 
 
-Time: <%= convert_time(@appointment.time) %> <br> 
+<i>Time:</i> <%= convert_time(@appointment.time) %> <br> 
 
-User's Name: <%= @user.name %> <br> 
-
-User's Image: <img src=<%= @user.image %>>
-
+<i>Your Name:</i> <%= @user.name %>
+</div> 

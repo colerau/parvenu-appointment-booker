@@ -8,7 +8,7 @@ class AppointmentsController < ApplicationController
         if @appointment.save 
             if logged_in?
                 if is_users_appointment?(@appointment)
-                    flash[:notice] = "Appointment successfully booked"
+                    flash[:notice] = "Appointment successfully booked."
                     redirect_to user_appointment_path(@appointment.user_id, @appointment.id)
                 end 
             end 
@@ -60,6 +60,5 @@ class AppointmentsController < ApplicationController
     def get_appointment_and_user
         @appointment = Appointment.find_by(id: params[:id])
         @user = User.find_by(id: @appointment.user_id)
-        binding.pry
     end
 end

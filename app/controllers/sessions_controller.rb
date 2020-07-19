@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
                 flash[:notice] = "You're in."
                 render 'welcome/home'
             else 
-                flash[:notice] = "Something went wrong"
+                flash[:notice] = "Something went wrong."
                 redirect_to root_path
             end 
         #if user did not use omniauth
@@ -40,11 +40,11 @@ class SessionsController < ApplicationController
             reset_session
             #if this if statement doesn't work something is very wrong 
             if session[:user_id] == nil
-                flash[:notice] = "You're logged out"
+                flash[:notice] = "You're logged out."
                 redirect_to '/login'
             end 
         else 
-            flash[:notice] = "No one is logged in"
+            flash[:notice] = "No one is logged in."
             redirect_to '/login'
         end 
     end
