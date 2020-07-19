@@ -1,15 +1,23 @@
 <% if @user %> <br> 
     <img src=<%= @user.image %>> <br><br> 
-    Name: <%= @user.name %> <br> 
-    Email: <%= @user.email %> <br> <br> 
-    <%= link_to "book a new appointment", new_user_appointment_path(@user.id) %> <br> <br> <br> 
+    <div class="text">
+    <i>Name:</i> <%= @user.name %> <br> 
+    <i>Email:</i> <%= @user.email %> <br> <br> 
+    </div>
+    <div class="new_appt">
+    <%= link_to "book a new appointment", new_user_appointment_path(@user.id) %> 
+    </div> <br> <br> <br> 
     <% if @user.appointments %> 
-        <h2> Your Appointment(s): </h2>
+        <h3> Your Appointment(s): </h3>
         <% @user.appointments.each do |appointment| %> 
-            Appointment Employee: <%= appointment.employee.name %> <br> 
-            Appointment Time: <%= convert_time(appointment.time) %> <br> 
-            <%= link_to "Edit Appointment", edit_user_appointment_path(@user.id, appointment.id) %> <br> 
-            <%= button_to "Delete Appointment", appointment, method: :delete %> 
+            <div class="text">
+            <i>Appointment Employee:</i> <%= appointment.employee.name %> <br> 
+            <i>Appointment Time:</i> <%= convert_time(appointment.time) %> <br> 
+            </div>
+            <div class="link">
+            <%= link_to "edit appointment", edit_user_appointment_path(@user.id, appointment.id) %> 
+            </div> <br>
+            <%= button_to "delete appointment", appointment, method: :delete %> 
             <br> <br> 
         <% end %> 
     <% end %> 
