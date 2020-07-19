@@ -22,5 +22,7 @@
         <% end %> 
     <% end %> 
 <% elsif @user == nil %> 
+    <div class="link">
     <%= link_to "Continue with Facebook", '/auth/facebook' %>
+    </div>
 <% end %> 
