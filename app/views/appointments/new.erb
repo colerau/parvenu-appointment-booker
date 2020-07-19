@@ -10,13 +10,13 @@
             <%= f.collection_select :employee_id, Employee.all, :id, :name %> <br> <br> <br> <br> 
 
             <h3> Choose time </h3> 
-            
+
             <%= render 'time' %> 
 
             <div class="field <%= ' field_with_errors' if @appointment.errors[:time].any? %>">
             <%= f.datetime_select :time %> 
             </div>
-            <br> <br> <br> <br> <br> 
+            <br> <br> <br> <br> <br> <br> 
             <%= f.submit "Book Appointment" %> 
         <% end %> 
     <% end %> 
