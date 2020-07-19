@@ -9,16 +9,22 @@
     </div> <br> <br> <br> 
     <% if @user.appointments %> 
         <h3> Your Appointment(s): </h3>
-        <% @user.appointments.each do |appointment| %> 
+        <% if @user.appointments.empty? %>
             <div class="text">
-            <i>Appointment Employee:</i> <%= appointment.employee.name %> <br> 
-            <i>Appointment Time:</i> <%= convert_time(appointment.time) %> <br> 
+                You currently do not have any appointments.
             </div>
-            <div class="link">
-            <%= link_to "edit appointment", edit_user_appointment_path(@user.id, appointment.id) %> 
-            </div> <br>
-            <%= button_to "delete appointment", appointment, method: :delete %> 
-            <br> <br> <br> <br> <br> 
+        <% else %> 
+            <% @user.appointments.each do |appointment| %> 
+                <div class="text">
+                <i>Appointment Employee:</i> <%= appointment.employee.name %> <br> 
+                <i>Appointment Time:</i> <%= convert_time(appointment.time) %> <br> 
+                </div>
+                <div class="link">
+                <%= link_to "edit appointment", edit_user_appointment_path(@user.id, appointment.id) %> 
+                </div> <br>
+                <%= button_to "delete appointment", appointment, method: :delete %> 
+                <br> <br> <br> <br> <br> 
+            <% end %> 
         <% end %> 
     <% end %> 
 <% elsif @user == nil %> 
@@ -27,10 +33,12 @@
     </div>
     <br>
 <% end %> 
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br>
 <center>
-<div class="cursive">
-    <link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
-    Parvenu
-</div>
-<img src="http://clipart-library.com/data_images/290477.jpg">
+    <div class="cursive">
+        <link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
+            Parvenu
+        <img src="http://clipart-library.com/data_images/290477.jpg" height=50px>
+    </div>
 </center>
