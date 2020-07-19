@@ -1,6 +1,7 @@
 <h1>Sign Up</h1>
 
 <%= form_for @user do |f| %>
+    <div class="text">
     <%= f.label :name %> 
     <%= f.text_field :name %><br>
 
@@ -14,8 +15,13 @@
     <%= f.text_field :password_confirmation %><br>
 
     <%= f.submit "Sign Up" %> 
+    </div>
 <% end %> 
 
-<br> <br> 
-
+<br> <br> <br>
+<div class="text">
+or 
+</div> <br> 
+<div class="link">
 <%= link_to "Continue with Facebook", '/auth/facebook' %>
+</div>
