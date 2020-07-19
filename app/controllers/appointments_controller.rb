@@ -29,7 +29,6 @@ class AppointmentsController < ApplicationController
         @appointment = Appointment.find(params[:id])
         if @appointment.update(appointment_params)
             if logged_in?
-                binding.pry
                 if is_users_appointment?(@appointment)
                     flash[:notice] = "Appointment Updated Successfully"
                     redirect_to appointment_path(@appointment.id)
