@@ -2,6 +2,8 @@ class Appointment < ApplicationRecord
     belongs_to :user
     belongs_to :employee
 
+    validates :time, uniqueness: true 
+    
     validate :valid_time
 
     def valid_time
