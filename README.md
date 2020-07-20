@@ -1,6 +1,6 @@
 # Parvenu Hair Salon Appointment Booker
 
-## A web app to book appointments for the Parvenu hair salon. 
+## A web app to book appointments for the Parvenu hair salon
 
 ### To Install
 1. Fork and clone this GitHub repository. 
@@ -8,4 +8,4 @@
 3. Inside the terminal, type ```bundle install```, then ```rails db:migrate```, then ```rails db:seed```.
 4. Type ```rails s``` into the terminal.
 5. On a web browser, navigate to http://localhost:3000/. 
-6. Make an account to book an appointment. 
+6. Make an account to book an appointment.
