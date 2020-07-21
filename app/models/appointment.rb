@@ -3,7 +3,7 @@ class Appointment < ApplicationRecord
     belongs_to :employee
 
     validates :time, uniqueness: true 
-    
+
     validate :valid_time
 
     def valid_time
@@ -16,5 +16,8 @@ class Appointment < ApplicationRecord
         if time.strftime("%M") != "00"
             errors.add(:time, "minute of hour must be 00")
         end 
+        if time <= Time.now 
+            errors.add(:time, "must be in the future")
+        end
     end
 end
