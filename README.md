@@ -2,6 +2,7 @@
 
 ## A web app to book appointments for the Parvenu hair salon
 
+## [project demonstration](https://www.youtube.com/watch?v=p2O7vWri394)
 ### To Install
 1. Fork and clone this GitHub repository. 
 2. Change directory into the folder automatically created when you cloned the repo. 
