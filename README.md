@@ -2,7 +2,8 @@
 
 ## A web app to book appointments for the Parvenu hair salon
 
-## [project demonstration](https://www.youtube.com/watch?v=p2O7vWri394)
+## ([project demonstration](https://www.youtube.com/watch?v=p2O7vWri394)  •  [project blog post](https://dev.to/colerau/my-flatiron-school-rails-app-47hh))
+
 ### To Install
 1. Fork and clone this GitHub repository. 
 2. Change directory into the folder automatically created when you cloned the repo. 
