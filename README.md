@@ -1,6 +1,6 @@
 # Parvenu Hair Salon Appointment Booker
 
-## A web app to book appointments for the Parvenu hair salon
+## A web app to book appointments for the Parvenu hair salon.
 
 ## ([project demonstration](https://www.youtube.com/watch?v=p2O7vWri394)  •  [project blog post](https://dev.to/colerau/my-flatiron-school-rails-app-47hh))
 
